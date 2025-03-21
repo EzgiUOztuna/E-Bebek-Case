@@ -57,11 +57,11 @@ $(document).ready(function () {
             }
 
             .productImg{
-                margin-bottom: .6rem;
+                margin-bottom: 1rem;
             }
 
             .definition{
-                margin-bottom: 10px;
+                margin-bottom: 1.5rem;
                 font-size: 1rem;
             }
 
@@ -69,12 +69,28 @@ $(document).ready(function () {
                 font-weight: 500;
             }
 
-            .rating{
-                margin: auto;
+            .priceAndRating {
+                margin:0;
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+
+            .priceCalculate {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+                margin: 0;
+            }
+
+            .rating, 
+            .finalPrice {
+                margin:0;
             }
 
             .originalPrice{
                 text-decoration: line-through;
+                margin:0;
             }
 
             .discount{
@@ -82,8 +98,6 @@ $(document).ready(function () {
                 font-size: 1.2rem;
                 font-weight: 700;
                 display: flex;
-                align-items: center;
-                gap: .3rem;
             }
 
             .productPrice{
@@ -101,6 +115,7 @@ $(document).ready(function () {
                 font-size: 1.1rem;
                 font-weight: 700;
                 cursor: pointer;
+                margin-top: 5rem;
             }
             
             `).appendTo('head');
@@ -140,13 +155,15 @@ $(document).ready(function () {
                         <a href="${product.url}" target="_blank">
                             <img class="productImg" src="${product.img}" alt="${product.name}">
                             <h1 class="definition"><strong>${product.brand}</strong> - <span>${product.name}</span></h1>
-                            <p class="rating">${starsHtml} (${comment})</p>
-                            <p class="priceCalculate">${discountRate ? `<span class="originalPrice">${originalPrice} TL</span> 
-                                <span class="discount">%${discountRate.toFixed(0)} 
-                                    <img src="assets/arrow-down-circle.svg"></img> 
-                                </span>` : ''}
-                            </p>
-                            <p>${discountRate ? `<span style="color: #00a365; font-size: 1.5rem">${product.price} TL</span>` : `<span style="font-size: 1.5rem">${product.price} TL</span>`}</p>
+                            <div class="priceAndRating">
+                                <p class="rating">${starsHtml} (${comment})</p>
+                                <p class="priceCalculate">${discountRate ? `<span class="originalPrice">${originalPrice} TL</span> 
+                                    <span class="discount">%${discountRate.toFixed(0)} 
+                                        <img src="assets/arrow-down-circle.svg"></img> 
+                                    </span>` : ''}
+                                </p>
+                                <p class="finalPrice">${discountRate ? `<span style="color: #00a365; font-size: 1.5rem">${product.price} TL</span>` : `<span style="font-size: 1.5rem">${product.price} TL</span>`}</p>
+                            </div>
                         </a>
                         <button class="addToCart" type="submit">Sepete Ekle</button>
                     </div>
