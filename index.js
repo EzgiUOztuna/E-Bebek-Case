@@ -39,13 +39,15 @@ $(document).ready(function () {
             }
 
             .card{
+                min-width: 21.6rem; 
                 border: 1px solid #ededed;
                 background-color: #fff;
                 border-radius: 1rem;
-                padding: 2rem;
+                padding: 1.5rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                align-items: center;
                 font-family: "Poppins";
             }
 
@@ -60,8 +62,11 @@ $(document).ready(function () {
                 margin-bottom: 1rem;
             }
 
+            .containerMiddle {
+                
+            }
+
             .definition{
-                margin-bottom: 1.5rem;
                 font-size: 1rem;
             }
 
@@ -83,9 +88,13 @@ $(document).ready(function () {
                 margin: 0;
             }
 
+            .rating {
+                position: relative;
+            }
+
             .rating, 
             .finalPrice {
-                margin:0;
+                margin: 0;
             }
 
             .originalPrice{
@@ -115,7 +124,7 @@ $(document).ready(function () {
                 font-size: 1.1rem;
                 font-weight: 700;
                 cursor: pointer;
-                margin-top: 5rem;
+                margin-top: 15rem;
             }
             
             `).appendTo('head');
@@ -154,15 +163,17 @@ $(document).ready(function () {
                     <div class="card">
                         <a href="${product.url}" target="_blank">
                             <img class="productImg" src="${product.img}" alt="${product.name}">
-                            <h1 class="definition"><strong>${product.brand}</strong> - <span>${product.name}</span></h1>
-                            <div class="priceAndRating">
-                                <p class="rating">${starsHtml} (${comment})</p>
-                                <p class="priceCalculate">${discountRate ? `<span class="originalPrice">${originalPrice} TL</span> 
-                                    <span class="discount">%${discountRate.toFixed(0)} 
-                                        <img src="assets/arrow-down-circle.svg"></img> 
-                                    </span>` : ''}
-                                </p>
-                                <p class="finalPrice">${discountRate ? `<span style="color: #00a365; font-size: 1.5rem">${product.price} TL</span>` : `<span style="font-size: 1.5rem">${product.price} TL</span>`}</p>
+                            <div class="containerMiddle">
+                                <h1 class="definition"><strong>${product.brand}</strong> - <span>${product.name}</span></h1>
+                                <div class="priceAndRating">
+                                    <p class="rating">${starsHtml} (${comment})</p>
+                                    <p class="priceCalculate">${discountRate ? `<span class="originalPrice">${originalPrice} TL</span> 
+                                        <span class="discount">%${discountRate.toFixed(0)} 
+                                            <img src="assets/arrow-down-circle.svg"></img> 
+                                        </span>` : ''}
+                                    </p>
+                                    <p class="finalPrice">${discountRate ? `<span style="color: #00a365; font-size: 1.5rem">${product.price} TL</span>` : `<span style="font-size: 1.5rem">${product.price} TL</span>`}</p>
+                                </div>
                             </div>
                         </a>
                         <button class="addToCart" type="submit">Sepete Ekle</button>
