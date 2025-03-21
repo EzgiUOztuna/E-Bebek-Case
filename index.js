@@ -124,7 +124,7 @@ $(document).ready(function () {
                 font-size: 1.1rem;
                 font-weight: 700;
                 cursor: pointer;
-                margin-top: 15rem;
+                margin-top: 5rem;
             }
             
             `).appendTo('head');
