@@ -58,6 +58,19 @@ $(document).ready(function () {
                 color:  #7d7d7d;
             }
 
+            .favorite-button{
+                border: none;
+                background-color: transparent;
+                position: relative;
+                left: 8rem;
+                transition: background-color 0.3s ease;
+                cursor: pointer;
+            }
+
+            .favorite-button.active {
+                background-color: #ff8a00;
+            }
+
             .productImg{
                 margin-bottom: 1rem;
             }
@@ -163,6 +176,9 @@ $(document).ready(function () {
 
                 const cardHtml = `
                     <div class="card">
+                    <button id="favorite-btn" class="favorite-button">
+                        <i class="fa-regular fa-heart fa-2xl" style="color: #ff8a00;"></i>
+                    </button>
                         <a href="${product.url}" target="_blank">
                             <img class="productImg" src="${product.img}" alt="${product.name}">
                             <div class="containerMiddle">
@@ -196,6 +212,17 @@ $(document).ready(function () {
 
 
     const setEvents = () => {
+
+        document.addEventListener("click", function (event) {
+            if (event.target.closest("#favorite-btn")) {
+                const btn = event.target.closest("#favorite-btn");
+                const icon = btn.querySelector("i");
+
+                icon.classList.toggle("fa-regular");
+                icon.classList.toggle("fa-solid");
+            }
+        });
+
 
     };
 
