@@ -26,17 +26,16 @@ $(document).ready(function () {
                 display: flex;
                 gap: 1.5rem;
                 overflow-x: auto; //‼️butona tıkladığında sağa sola kaymasını sağlayacağım.
-                
             }
 
             .card{
-                border: 1px solid black;
+                border: 1px solid #ededed;
+                background-color: #fff;
                 border-radius: 1rem;
-                padding: 1.5rem;
-                display:flex;
+                padding: 2rem;
+                display: flex;
                 flex-direction: column;
-                align-items: center;
-                justify-content: center;
+                justify-content: space-between;
             }
 
             .card a{
@@ -46,6 +45,19 @@ $(document).ready(function () {
                 color:  #7d7d7d
             }
 
+            .productImg{
+                margin-bottom: .6rem;
+            }
+
+            .definition{
+                margin-bottom: 10px;
+                font-size: 1rem;
+            }
+
+            .definition span{
+                font-weight: 500;
+            }
+
             .priceCalculate{
                 display: flex;
                 gap:.8rem;
@@ -53,7 +65,7 @@ $(document).ready(function () {
             }
 
             .original-price{
-            text-decoration: line-through;
+                text-decoration: line-through;
             }
 
             .discount{
@@ -66,7 +78,7 @@ $(document).ready(function () {
             }
 
             .addToCart{
-                background-color:#fff7ec;
+                background-color: #fff7ec;
                 border: none;
                 width: 100%;
                 height: 2.68rem;
@@ -99,8 +111,8 @@ $(document).ready(function () {
                 const cardHtml = `
                     <div class="card">
                         <a href="${product.url}" target="_blank">
-                            <img src="${product.img}" alt="${product.name}">
-                            <p><strong>${product.brand}</strong> - ${product.name}</p>
+                            <img class="productImg" src="${product.img}" alt="${product.name}">
+                            <h1 class="definition"><strong>${product.brand}</strong> - <span>${product.name}</span></h1>
                             <p class="priceCalculate">${discountRate ? `<span class="original-price">${originalPrice} TL</span> 
                                 <span class="discount">%${discountRate.toFixed(0)} 
                                     <img src="assets/arrow-down-circle.svg"></img> 
