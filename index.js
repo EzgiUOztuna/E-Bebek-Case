@@ -35,11 +35,10 @@ $(document).ready(function () {
                 display: flex;
                 gap: 1.5rem;
                 overflow-x: auto; //‼️butona tıkladığında sağa sola kaymasını sağlayacağım.
-                font-family: 
             }
 
             .card{
-                min-width: 21.6rem; 
+                min-width: 18rem; 
                 border: 1px solid #ededed;
                 background-color: #fff;
                 border-radius: 1rem;
@@ -49,6 +48,7 @@ $(document).ready(function () {
                 justify-content: space-between;
                 align-items: center;
                 font-family: "Poppins";
+                position: relative;
             }
 
             .card a{
@@ -79,6 +79,8 @@ $(document).ready(function () {
                 display: flex;
                 flex-direction: column;
                 gap: 0.2rem;
+                position: absolute;
+                top: 28rem;
             }
 
             .priceCalculate {
@@ -124,7 +126,7 @@ $(document).ready(function () {
                 font-size: 1.1rem;
                 font-weight: 700;
                 cursor: pointer;
-                margin-top: 5rem;
+                margin-top: 10rem;
             }
             
             `).appendTo('head');
