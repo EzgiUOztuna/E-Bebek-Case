@@ -54,17 +54,50 @@ $(document).ready(function () {
                 </div>
             </div>
             <div class="hero">
-                <img src="https://cdn05.e-bebek.com/media/c/haftasonufirsatiyenibg.jpg"> 
+                <img class="bg-img" src="https://cdn05.e-bebek.com/media/c/haftasonufirsatiyenibg.jpg"> 
+                <img class="adv-img" src="https://cdn05.e-bebek.com/media/c/1000022649-secili-tekstil-urunlerinde-sepette-net-30-indirim-internete-ozeld.jpg"> 
                 <ul class="nav-hero">
                     <li class="nav-item"> 
-                        <button class="nav-button">BEBEK MODASI</button>
-                        <button class="nav-button">EMZİRME&BESLENME</button>
-                        <button class="nav-button">BEBEK BEZİ&ISLAK MENDİL</button>
-                        <button class="nav-button">BANYO&BAKIM</button>
-                        <button class="nav-button">OYUNCAK</button>
-                        <button class="nav-button">ARAÇ GEREÇ&MOBİLYA</button>
-                        <button class="nav-button">BAYRAM ŞENLİĞİ</button>
-                        <button class="nav-button">DUYURU</button>
+                        <button class="nav-button" 
+                            data-bg="https://cdn05.e-bebek.com/media/c/haftasonufirsatiyenibg.jpg"
+                            data-adv="https://cdn05.e-bebek.com/media/c/1000022649-secili-tekstil-urunlerinde-sepette-net-30-indirim-internete-ozeld.jpg">
+                            BEBEK MODASI
+                        </button>
+                        <button class="nav-button" 
+                            data-bg="https://cdn05.e-bebek.com/media/c/bayram-bgg.jpg"
+                            data-adv="https://cdn05.e-bebek.com/media/c/-tum-oioi-beslenme-gereclerinde-net-40-indirim-d.jpg">
+                            EMZİRME&BESLENME
+                        </button>
+                        <button class="nav-button"
+                            data-bg="https://cdn05.e-bebek.com/media/c/bayram-bgg.jpg"
+                            data-adv="https://cdn05.e-bebek.com/media/c/bebek-bezlerinde-net-20-indirim-prima-ve-pofy-haric-d.jpg">
+                            BEBEK BEZİ&ISLAK MENDİL
+                        /button>
+                        <button class="nav-button"
+                            data-bg="https://cdn05.e-bebek.com/media/c/bayram-bgg.jpg"
+                            data-adv="https://cdn05.e-bebek.com/media/c/tum-banyo-ve-tuvalet-urunlerinde-net-20-indirim-d.jpg">
+                            BANYO&BAKIM
+                        </button>
+                        <button class="nav-button"
+                            data-bg="https://cdn05.e-bebek.com/media/c/bayram-bgg.jpg"
+                            data-adv="https://cdn05.e-bebek.com/media/c/tum-akulu-araclar-scooter-ve-bisikletlerde-sepette-30-indirim-d.jpg">
+                            OYUNCAK
+                        </button>
+                        <button class="nav-button"
+                            data-bg="https://cdn05.e-bebek.com/media/c/bayram-bgg.jpg"
+                            data-adv="https://cdn05.e-bebek.com/media/c/tum-joie-urunlerinde-sepette-net-30-indirimaaaaad.jpg">
+                            ARAÇ GEREÇ&MOBİLYA
+                        </button>
+                        <button class="nav-button"
+                            data-bg="https://cdn05.e-bebek.com/media/c/bayram-bgg.jpg"
+                            data-adv="https://cdn05.e-bebek.com/media/c/bayram-senligi-lp-dd.jpg">
+                            BAYRAM ŞENLİĞİ
+                        </button>
+                        <button class="nav-button"
+                            data-bg="https://cdn05.e-bebek.com/media/c/tum-kategorilerde-4-taksit-arac-gerec-ve-mobilya-kategorisinde-8-taksit-bg.jpg"
+                            data-adv="https://cdn05.e-bebek.com/media/c/tum-kategorilerde-4-taksit-arac-gerec-ve-mobilya-kategorisinde-8-taksit-d.jpg">
+                            DUYURU
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -273,6 +306,13 @@ $(document).ready(function () {
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+            }
+
+            .adv-img{
+                position: absolute;
+                width: 75rem;
+                border-radius: 3rem;
+                margin-bottom: 2rem;
             }
 
             .nav-hero {
