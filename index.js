@@ -546,8 +546,25 @@ $(document).ready(function () {
 
                 icon.classList.toggle("fa-regular");
                 icon.classList.toggle("fa-solid");
+
+                // Favoriler dizisini almak veya oluşturmak
+                let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+                // Eğer ikon 'fa-solid' olduysa, favori olarak ekle
+                if (icon.classList.contains("fa-solid")) {
+                    // Butonun id'sini dizine ekle (örnek olarak, favorilere eklemek için buton id'si kullanılıyor)
+                    favorites.push(btn.id);
+                } else {
+                    // Eğer ikon 'fa-regular' olduysa, favorilerden kaldır
+                    favorites = favorites.filter(item => item !== btn.id);
+                }
+
+                // Güncellenmiş favoriler dizisini localStorage'a kaydet
+                localStorage.setItem("favorites", JSON.stringify(favorites));
             }
         });
+
+
 
         // Tüm butonları seç
         const buttons = document.querySelectorAll('.nav-button');
