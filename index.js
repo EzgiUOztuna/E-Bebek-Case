@@ -24,7 +24,33 @@ $(document).ready(function () {
                     </div>
                 </div>
                 <div class="header-down">
-
+                    <div class="category-menu">
+                        <div class="categories">
+                            <p>Kategoriler</p>
+                            <img src="assets/dropdown-arrow-svgrepo-com.svg">
+                        </div>
+                        <div class="explore">
+                            <p>Keşfet</p>
+                            <img src="assets/dropdown-arrow-svgrepo-com.svg">
+                        </div>
+                        <div class="present">
+                            <p>Hediye</p>
+                            <img src="assets/dropdown-arrow-svgrepo-com.svg">
+                        </div>
+                        <p class="internet" style="color: #0091D4">İnternete Özel Ürünler</p>
+                        <p class="campaign" style="color: #F18E00">Kampanyalar</p>
+                        <p class="outlet" style="color: #F18E00">Outlet</p>
+                    </div>
+                    <div class="order">
+                        <div class="order-location">
+                            <img src="https://cdn05.e-bebek.com/media/c/siparisim-nerede-logo.png">
+                            <p>SİPARİŞİM NEREDE</p>
+                        </div>
+                        <div class="closest-location">
+                            <img src="https://cdn05.e-bebek.com/media/c/enyakin-ebebek-logo.png">
+                            <p>EN YAKIN EBEBEK</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="container">
@@ -134,7 +160,9 @@ $(document).ready(function () {
                 font-weight: 600;  
                 font-family: "Poppins";
                 cursor: pointer;  
-                background-color: #EBF6FB;       
+                background-color: #EBF6FB;
+                display:flex;
+                gap: .5rem;
             }
 
             .cart:hover{
@@ -142,9 +170,71 @@ $(document).ready(function () {
                 color: #fff;
             }
 
-            .fa-cart-shopping{
-                margin-right: .5rem;
+            .cart i{
+                margin-rigth: 20px;
             }
+
+            .cart:hover i {
+                color: white !important; 
+            }
+
+            .header-down {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0 8rem 1rem 8rem;
+            }
+
+            .category-menu {
+                display:flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+                font-weight: 600;
+                font-family: "Poppins";
+                font-size: 1rem;
+                cursor: pointer;
+            }
+
+            .categories, 
+            .explore,
+            .present{
+                display: flex;
+                align-items: center;
+                color: #686868;
+            }
+
+            .internet:hover,
+            .campaign:hover,
+            .outlet:hover{
+                text-decoration: underline;
+            }
+
+            .categories img,
+            .explore img, 
+            .present img{
+                height:1.5rem;
+            }
+
+            .order{
+                display: flex;
+                gap: 2rem;
+                color: #686868;
+                font-weight: 600;
+                font-family: "Poppins";
+                font-size: 1rem;
+                cursor: pointer;
+            }
+
+            .order-location, 
+            .closest-location{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            
 
             .title-primary{
                 font-family: "Quicksand", sans-serif;
@@ -163,7 +253,6 @@ $(document).ready(function () {
                 display: flex;
                 gap: 1.5rem;
                 overflow-x: auto; //‼️butona tıkladığında sağa sola kaymasını sağlayacağım.
-                
             }
 
             .card{
