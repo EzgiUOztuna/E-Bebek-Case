@@ -9,13 +9,23 @@ $(document).ready(function () {
     const buildHtml = () => {
         const html = `
             <div class="header">
-                <img src="https://cdn05.e-bebek.com/y.ebebek/9973673459742.svg">
-                <p class="searchBox"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #0091d4;"></i>
-                    Ürün, kategori veya marka arayın
-                </p>
-                <i class="fa-regular fa-heart fa-xl" style="color: #0091d4;"></i>
-                <p><i class="fa-regular fa-user fa-xl" style="color: #0091d4;"></i> Giriş Yap / Üye Ol</p>
-                <p><i class="fa-solid fa-cart-shopping fa-xl" style="color: #0091d4;"></i> SEPETİM</p>
+                <div class="header-up">
+                    <img class="ebebek-logo" src="https://cdn05.e-bebek.com/y.ebebek/9973673459742.svg">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #0091d4;"></i>
+                        <input 
+                            type="text"
+                            placeholder="Ürün, kategori veya marka arayın">
+                    </div>
+                    <div class="user-actions">
+                        <i class="fa-regular fa-heart fa-xl heart-icon" style="color: #0091d4;"></i>
+                        <p class="account"><i class="fa-regular fa-user fa-xl" style="color: #0091d4;"></i> Hesabım</p>
+                        <p class="cart"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #0091d4;"></i> SEPETİM</p>
+                    </div>
+                </div>
+                <div class="header-down">
+
+                </div>
             </div>
             <div class="container">
                 <h1 class="title-primary"> Beğenebileceğinizi düşündüklerimiz</h1>
@@ -28,6 +38,114 @@ $(document).ready(function () {
 
     const buildCss = () => {
         $('<style>').html(`
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: "Poppins", sans-serif;
+            }
+
+            .header-up{
+                margin: 0 8rem;
+                padding: 20px 0 10px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .ebebek-logo{
+                width: 8rem;
+            }
+
+            .search-box{
+                border: 1px solid #EBF6FB;
+                background-color: #EBF6FB;
+                width: 600px;
+                height: 48px;
+                border-radius: 2.5rem;
+                padding: 0 1rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .search-box input {
+                width: 100%;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                color: #686868;
+                font-size: 1rem;
+                font-family: "Quicksand", sans-serif;
+                font-weight: 600;
+            }
+
+            .user-actions{
+                display:flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+
+            .heart-icon{
+                border: 2px solid #EBF6FB;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 100%;
+                display: inline-flex; /* İçeriği hizalamak için */
+                align-items: center; 
+                justify-content: center;
+                cursor: pointer;
+            }
+
+            .heart-icon:hover {
+                background-color: #EBF6FB;
+            }
+
+            .fa-user{
+                margin-right: .5rem;
+            }
+
+            .account{
+                border: 2px solid #EBF6FB;
+                width: 8rem;
+                height: 3rem;
+                border-radius: 2rem;
+                display: flex;
+                align-items: center; 
+                justify-content: center;  
+                padding: 0 .5rem;
+                color: #0091d4;  
+                margin-left: 1rem;   
+                font-weight: 600;  
+                font-family: "Poppins";
+                cursor: pointer;         
+            }
+
+            .cart{
+                border: 2px solid #EBF6FB;
+                width: 8rem;
+                height: 3rem;
+                border-radius: 2rem;
+                display: flex;
+                align-items: center; 
+                justify-content: center;  
+                padding: 0 .5rem;
+                color: #0091d4;  
+                margin-left: 1rem;   
+                font-weight: 600;  
+                font-family: "Poppins";
+                cursor: pointer;  
+                background-color: #EBF6FB;       
+            }
+
+            .cart:hover{
+                background-color: #008ACE;
+                color: #fff;
+            }
+
+            .fa-cart-shopping{
+                margin-right: .5rem;
+            }
+
             .title-primary{
                 font-family: "Quicksand", sans-serif;
                 font-size: 2.5rem;
@@ -37,12 +155,15 @@ $(document).ready(function () {
                 padding: 1.56rem 4.18rem;
                 border-top-left-radius: 2.18rem;
                 border-top-right-radius: 2.18rem;
+                margin: 0 8rem 1.5rem 8rem;
             }
             
             .cards{
+                margin: 0 8rem;
                 display: flex;
                 gap: 1.5rem;
                 overflow-x: auto; //‼️butona tıkladığında sağa sola kaymasını sağlayacağım.
+                
             }
 
             .card{
@@ -79,12 +200,8 @@ $(document).ready(function () {
                 background-color: #ff8a00;
             }
 
-            .productImg{
+            .product-img{
                 margin-bottom: 1rem;
-            }
-
-            .containerMiddle {
-                
             }
 
             .definition{
@@ -95,7 +212,7 @@ $(document).ready(function () {
                 font-weight: 500;
             }
 
-            .priceAndRating {
+            .price-rating {
                 margin:0;
                 display: flex;
                 flex-direction: column;
@@ -104,7 +221,7 @@ $(document).ready(function () {
                 top: 28rem;
             }
 
-            .priceCalculate {
+            .price-calculate {
                 display: flex;
                 gap: 0.5rem;
                 align-items: center;
@@ -116,11 +233,11 @@ $(document).ready(function () {
             }
 
             .rating, 
-            .finalPrice {
+            .final-price {
                 margin: 0;
             }
 
-            .originalPrice{
+            .original-price{
                 text-decoration: line-through;
                 margin:0;
             }
@@ -132,11 +249,7 @@ $(document).ready(function () {
                 display: flex;
             }
 
-            .productPrice{
-                color: #00a365;
-            }
-
-            .addToCart{
+            .add-to-cart{
                 background-color: #fff7ec;
                 border: none;
                 width: 100%;
@@ -188,21 +301,21 @@ $(document).ready(function () {
                             <i class="fa-regular fa-heart fa-2xl" style="color: #ff8a00;"></i>
                         </button>
                         <a href="${product.url}" target="_blank">
-                            <img class="productImg" src="${product.img}" alt="${product.name}">
+                            <img class="product-img" src="${product.img}" alt="${product.name}">
                             <div class="containerMiddle">
                                 <h1 class="definition"><strong>${product.brand}</strong> - <span>${product.name}</span></h1>
-                                <div class="priceAndRating">
+                                <div class="price-rating">
                                     <p class="rating">${starsHtml} (${comment})</p>
-                                    <p class="priceCalculate">${discountRate ? `<span class="originalPrice">${originalPrice} TL</span> 
+                                    <p class="price-calculate">${discountRate ? `<span class="original-price">${originalPrice} TL</span> 
                                         <span class="discount">%${discountRate.toFixed(0)} 
                                             <img src="assets/arrow-down-circle.svg"></img> 
                                         </span>` : ''}
                                     </p>
-                                    <p class="finalPrice">${discountRate ? `<span style="color: #00a365; font-size: 1.5rem">${product.price} TL</span>` : `<span style="font-size: 1.5rem">${product.price} TL</span>`}</p>
+                                    <p class="final-price">${discountRate ? `<span style="color: #00a365; font-size: 1.5rem">${product.price} TL</span>` : `<span style="font-size: 1.5rem">${product.price} TL</span>`}</p>
                                 </div>
                             </div>
                         </a>
-                        <button class="addToCart" type="submit">Sepete Ekle</button>
+                        <button class="add-to-cart" type="submit">Sepete Ekle</button>
                     </div>
                 `;
 
