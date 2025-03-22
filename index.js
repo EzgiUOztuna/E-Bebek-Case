@@ -361,7 +361,7 @@ $(document).ready(function () {
                 padding: 1.56rem 4.18rem;
                 border-top-left-radius: 2.18rem;
                 border-top-right-radius: 2.18rem;
-                margin: 0 8rem 1.5rem 8rem;
+                margin: 2rem 8rem 1.5rem 8rem;
             }
             
             .cards{
@@ -565,9 +565,6 @@ $(document).ready(function () {
                 // Yeni resimleri ata
                 bgImage.src = bgSrc;
                 advImage.src = advSrc;
-
-                // Adv resmini görünür yap
-                advImage.style.opacity = 1;
 
                 // Tüm butonlardan 'active' sınıfını kaldır
                 buttons.forEach(btn => btn.classList.remove('active'));
