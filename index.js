@@ -502,7 +502,7 @@ $(document).ready(function () {
 
                 const cardHtml = `
                         <div class="card">
-                        <button id="favorite-btn" class="favorite-button">
+                        <button id="favorite-btn" class="favorite-button" data-id="${product.id}">
                             <i class="fa-regular fa-heart fa-2xl" style="color: #ff8a00;"></i>
                         </button>
                         <a href="${product.url}" target="_blank">
@@ -539,30 +539,49 @@ $(document).ready(function () {
 
     const setEvents = () => {
 
-        document.addEventListener("click", function (event) {
-            if (event.target.closest("#favorite-btn")) {
-                const btn = event.target.closest("#favorite-btn");
+        document.addEventListener("DOMContentLoaded", function () {
+            let favoriteProducts = JSON.parse(localStorage.getItem("favorites")) || [];
+            // Favori ürünleri Local Storage'dan al
+            document.querySelectorAll(".favorite-button").forEach(btn => {
+                // Sayfa yüklendiğinde, favori ürünleri kontrol et ve ikonları güncelle
+                const productId = btn.getAttribute("data-id");
                 const icon = btn.querySelector("i");
 
-                icon.classList.toggle("fa-regular");
-                icon.classList.toggle("fa-solid");
+                if (favoriteProducts.includes(productId)) {
+                    icon.classList.remove("fa-regular");
+                    icon.classList.add("fa-solid");
+                    icon.style.color = "#ff8a00";
+                }
+            });
+        });
 
-                // Favoriler dizisini almak veya oluşturmak
-                let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        document.addEventListener("click", function (event) {
+            if (event.target.closest(".favorite-button")) {
+                const btn = event.target.closest(".favorite-button");
+                const icon = btn.querySelector("i");
+                const productId = btn.getAttribute("data-id");
 
-                // Eğer ikon 'fa-solid' olduysa, favori olarak ekle
-                if (icon.classList.contains("fa-solid")) {
-                    // Butonun id'sini dizine ekle (örnek olarak, favorilere eklemek için buton id'si kullanılıyor)
-                    favorites.push(btn.id);
+                let favoriteProducts = JSON.parse(localStorage.getItem("favorites")) || [];
+
+                if (favoriteProducts.includes(productId)) {
+                    // Eğer ürün zaten favorilere eklenmişse, kaldır
+                    favoriteProducts = favoriteProducts.filter(id => id !== productId);
+                    icon.classList.remove("fa-solid");
+                    icon.classList.add("fa-regular");
                 } else {
-                    // Eğer ikon 'fa-regular' olduysa, favorilerden kaldır
-                    favorites = favorites.filter(item => item !== btn.id);
+                    // Değilse favorilere ekle
+                    favoriteProducts.push(productId);
+                    icon.classList.remove("fa-regular");
+                    icon.classList.add("fa-solid");
                 }
 
-                // Güncellenmiş favoriler dizisini localStorage'a kaydet
-                localStorage.setItem("favorites", JSON.stringify(favorites));
+                // Güncellenmiş favorileri kaydet
+                localStorage.setItem("favorites", JSON.stringify(favoriteProducts));
             }
         });
+
+
+
 
 
 
