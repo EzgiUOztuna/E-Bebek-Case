@@ -204,6 +204,12 @@ $(document).ready(function () {
                 color: #686868;
             }
 
+            .categories:hover, 
+            .explore:hover,
+            .present:hover{
+                color: #008ACE
+            }
+
             .internet:hover,
             .campaign:hover,
             .outlet:hover{
@@ -214,6 +220,13 @@ $(document).ready(function () {
             .explore img, 
             .present img{
                 height:1.5rem;
+            }
+
+            .categories img:hover,
+            .explore img:hover, 
+            .present img:hover {
+                transform: rotate(180deg);
+                color: #008ACE
             }
 
             .order{
