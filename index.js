@@ -58,7 +58,7 @@ $(document).ready(function () {
                 <img class="adv-img" src="https://cdn05.e-bebek.com/media/c/1000022649-secili-tekstil-urunlerinde-sepette-net-30-indirim-internete-ozeld.jpg"> 
                 <ul class="nav-hero">
                     <li class="nav-item"> 
-                        <button class="nav-button" 
+                        <button class="nav-button" id="first-btn"
                             data-bg="https://cdn05.e-bebek.com/media/c/haftasonufirsatiyenibg.jpg"
                             data-adv="https://cdn05.e-bebek.com/media/c/1000022649-secili-tekstil-urunlerinde-sepette-net-30-indirim-internete-ozeld.jpg">
                             BEBEK MODASI
@@ -72,7 +72,7 @@ $(document).ready(function () {
                             data-bg="https://cdn05.e-bebek.com/media/c/bayram-bgg.jpg"
                             data-adv="https://cdn05.e-bebek.com/media/c/bebek-bezlerinde-net-20-indirim-prima-ve-pofy-haric-d.jpg">
                             BEBEK BEZİ&ISLAK MENDİL
-                        /button>
+                        </button>
                         <button class="nav-button"
                             data-bg="https://cdn05.e-bebek.com/media/c/bayram-bgg.jpg"
                             data-adv="https://cdn05.e-bebek.com/media/c/tum-banyo-ve-tuvalet-urunlerinde-net-20-indirim-d.jpg">
@@ -344,6 +344,12 @@ $(document).ready(function () {
                 color: white;
                 cursor: pointer;
             }
+
+            .nav-button.active{
+                background-color: #fef6eb;
+                color: #F18E00;
+                border: none;
+            }
             
 
             .title-primary{
@@ -542,6 +548,35 @@ $(document).ready(function () {
                 icon.classList.toggle("fa-solid");
             }
         });
+
+        // Tüm butonları seç
+        const buttons = document.querySelectorAll('.nav-button');
+        // Resim elemanlarını seç
+        const bgImage = document.querySelector('.bg-img');
+        const advImage = document.querySelector('.adv-img');
+
+        // Her butona tıklama eventi ekle
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Butondan veri al (background ve advertisement img)
+                const bgSrc = button.getAttribute('data-bg');
+                const advSrc = button.getAttribute('data-adv');
+
+                // Yeni resimleri ata
+                bgImage.src = bgSrc;
+                advImage.src = advSrc;
+
+                // Adv resmini görünür yap
+                advImage.style.opacity = 1;
+
+                // Tüm butonlardan 'active' sınıfını kaldır
+                buttons.forEach(btn => btn.classList.remove('active'));
+
+                // Tıklanan butona 'active' sınıfını ekle
+                button.classList.add('active');
+            });
+        });
+
 
 
     };
