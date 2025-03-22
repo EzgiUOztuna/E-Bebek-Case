@@ -53,6 +53,21 @@ $(document).ready(function () {
                     </div>
                 </div>
             </div>
+            <div class="hero">
+                <img src="https://cdn05.e-bebek.com/media/c/haftasonufirsatiyenibg.jpg"> 
+                <ul class="nav-hero">
+                    <li class="nav-item"> 
+                        <button class="nav-button">BEBEK MODASI</button>
+                        <button class="nav-button">EMZİRME&BESLENME</button>
+                        <button class="nav-button">BEBEK BEZİ&ISLAK MENDİL</button>
+                        <button class="nav-button">BANYO&BAKIM</button>
+                        <button class="nav-button">OYUNCAK</button>
+                        <button class="nav-button">ARAÇ GEREÇ&MOBİLYA</button>
+                        <button class="nav-button">BAYRAM ŞENLİĞİ</button>
+                        <button class="nav-button">DUYURU</button>
+                    </li>
+                </ul>
+            </div>
             <div class="container">
                 <h1 class="title-primary"> Beğenebileceğinizi düşündüklerimiz</h1>
                 <div class="cards"></div>
@@ -252,6 +267,43 @@ $(document).ready(function () {
                 gap: 0.5rem;
             }
 
+            .hero{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-hero {
+                position: absolute;
+                top: 1rem; 
+                left: 50%;
+                transform: translate(-50%, -50%); 
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 100px;
+                width: 100%;
+            }
+
+            .nav-item {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-button {
+                font-family: "Poppins";
+                font-size: 1rem;
+                font-weight: 600;
+                border: none;
+                border-radius: 2rem;
+                background-color: transparent;
+                padding: .6rem 1rem;
+                color: white;
+                cursor: pointer;
+            }
             
 
             .title-primary{
