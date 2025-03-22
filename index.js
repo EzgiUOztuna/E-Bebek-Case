@@ -8,18 +8,26 @@ $(document).ready(function () {
 
     const buildHtml = () => {
         const html = `
+            <div class="header">
+                <img src="https://cdn05.e-bebek.com/y.ebebek/9973673459742.svg">
+                <p class="searchBox"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #0091d4;"></i>
+                    Ürün, kategori veya marka arayın
+                </p>
+                <i class="fa-regular fa-heart fa-xl" style="color: #0091d4;"></i>
+                <p><i class="fa-regular fa-user fa-xl" style="color: #0091d4;"></i> Giriş Yap / Üye Ol</p>
+                <p><i class="fa-solid fa-cart-shopping fa-xl" style="color: #0091d4;"></i> SEPETİM</p>
+            </div>
             <div class="container">
                 <h1 class="title-primary"> Beğenebileceğinizi düşündüklerimiz</h1>
                 <div class="cards"></div>
             </div>
         `;
-        $("body").append(html); //‼️"body" kısmı değişebilir.
+        $("body").append(html);
     };
 
 
     const buildCss = () => {
         $('<style>').html(`
-
             .title-primary{
                 font-family: "Quicksand", sans-serif;
                 font-size: 2.5rem;
@@ -175,10 +183,10 @@ $(document).ready(function () {
                 }
 
                 const cardHtml = `
-                    <div class="card">
-                    <button id="favorite-btn" class="favorite-button">
-                        <i class="fa-regular fa-heart fa-2xl" style="color: #ff8a00;"></i>
-                    </button>
+                        <div class="card">
+                        <button id="favorite-btn" class="favorite-button">
+                            <i class="fa-regular fa-heart fa-2xl" style="color: #ff8a00;"></i>
+                        </button>
                         <a href="${product.url}" target="_blank">
                             <img class="productImg" src="${product.img}" alt="${product.name}">
                             <div class="containerMiddle">
