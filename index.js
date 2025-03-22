@@ -27,15 +27,15 @@ $(document).ready(function () {
                     <div class="category-menu">
                         <div class="categories">
                             <p>Kategoriler</p>
-                            <img src="assets/dropdown-arrow-svgrepo-com.svg">
+                            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
                         </div>
                         <div class="explore">
                             <p>Keşfet</p>
-                            <img src="assets/dropdown-arrow-svgrepo-com.svg">
+                            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
                         </div>
                         <div class="present">
                             <p>Hediye</p>
-                            <img src="assets/dropdown-arrow-svgrepo-com.svg">
+                            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
                         </div>
                         <p class="internet" style="color: #0091D4">İnternete Özel Ürünler</p>
                         <p class="campaign" style="color: #F18E00">Kampanyalar</p>
@@ -76,6 +76,7 @@ $(document).ready(function () {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                gap:5rem;
             }
 
             .ebebek-logo{
@@ -201,6 +202,7 @@ $(document).ready(function () {
             .present{
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 color: #686868;
             }
 
@@ -216,15 +218,18 @@ $(document).ready(function () {
                 text-decoration: underline;
             }
 
-            .categories img,
-            .explore img, 
-            .present img{
+            .categories i,
+            .explore i, 
+            .present i{
                 height:1.5rem;
+                display: flex;
+                align-items: center;
+                margin-left: .7rem;
             }
 
-            .categories img:hover,
-            .explore img:hover, 
-            .present img:hover {
+            .categories i:hover,
+            .explore i:hover, 
+            .present i:hover {
                 transform: rotate(180deg);
                 color: #008ACE
             }
