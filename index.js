@@ -702,6 +702,8 @@ $(document).ready(function () {
         } catch (error) {
             console.error("Hata oluştu:", error);
         }
+
+
     };
 
 
@@ -771,25 +773,35 @@ $(document).ready(function () {
 
 
         //HERO BUTTONS
+        // Tüm butonları seç
         const buttons = document.querySelectorAll('.nav-button');
-
+        // Resim elemanlarını seç
         const bgImage = document.querySelector('.bg-img');
         const advImage = document.querySelector('.adv-img');
 
+        // Her butona tıklama eventi ekle
         buttons.forEach(button => {
             button.addEventListener('click', () => {
-
+                // Butondan veri al (background ve advertisement img)
                 const bgSrc = button.getAttribute('data-bg');
                 const advSrc = button.getAttribute('data-adv');
 
+                // Yeni resimleri ata
                 bgImage.src = bgSrc;
                 advImage.src = advSrc;
 
+                // Tüm butonlardan 'active' sınıfını kaldır
                 buttons.forEach(btn => btn.classList.remove('active'));
 
+                // Tıklanan butona 'active' sınıfını ekle
                 button.classList.add('active');
             });
         });
+
+
+
     };
+
     init();
+
 })
