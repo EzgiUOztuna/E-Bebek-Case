@@ -103,7 +103,11 @@ $(document).ready(function () {
             </div>
             <div class="container">
                 <h1 class="title-primary"> Beğenebileceğinizi düşündüklerimiz</h1>
-                <div class="cards"></div>
+                <div class="caurosel">
+                    <button class="left-button carousel-button"><i class="fas fa-chevron-left"></i></button>
+                    <div class="cards"></div>
+                    <button class="left-button carousel-button"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
         `;
         $("body").append(html);
@@ -116,6 +120,10 @@ $(document).ready(function () {
                 margin: 0;
                 padding: 0;
                 font-family: "Poppins", sans-serif;
+            }
+
+            .caurosel{
+                display:flex;
             }
 
             .header-up{
