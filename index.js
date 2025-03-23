@@ -789,7 +789,6 @@ $(document).ready(function () {
 
                 buttons.forEach(btn => btn.classList.remove('active'));
 
-                // Tıklanan butona 'active' sınıfını ekle
                 button.classList.add('active');
             });
         });
