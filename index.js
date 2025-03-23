@@ -627,18 +627,7 @@ $(document).ready(function () {
 
                 .add-to-cart{
                     font-size: .8rem;
-            }
-
-            }
-
-            /* Tabletler (481px - 768px) */
-            @media (max-width: 768px) {
-                    
-            }
-
-            /* Küçük Laptoplar (769px - 1024px) */
-            @media (max-width: 1024px) {
-                    
+                }
             }
 
             /* Büyük Ekranlar (1281px ve üzeri) */
@@ -649,11 +638,8 @@ $(document).ready(function () {
 
                 .header-down {
                     margin: 0 10rem 1rem 10rem;
-                }
-                    
+                }   
             }
-
-            
             `).appendTo('head');
     };
 
