@@ -630,7 +630,7 @@ $(document).ready(function () {
     const setEvents = () => {
 
         document.addEventListener("click", function () {
-            //Carousel
+            //CAROUSEL
             const leftButton = document.querySelector(".left-button");
             const rightButton = document.querySelector(".right-button");
             const cardsContainer = document.querySelector(".cards");
@@ -646,7 +646,7 @@ $(document).ready(function () {
             });
         });
 
-        //Favorite Button
+        //FAVORITE BUTTON
         document.addEventListener("click", function (event) {
             if (event.target.closest(".favorite-button")) {
                 const btn = event.target.closest(".favorite-button");
@@ -692,7 +692,7 @@ $(document).ready(function () {
         });
 
 
-        //Hero buttons
+        //HERO BUTTONS
         // Tüm butonları seç
         const buttons = document.querySelectorAll('.nav-button');
         // Resim elemanlarını seç
