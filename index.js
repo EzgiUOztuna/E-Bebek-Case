@@ -792,11 +792,6 @@ $(document).ready(function () {
                 button.classList.add('active');
             });
         });
-
-
-
     };
-
     init();
-
 })
