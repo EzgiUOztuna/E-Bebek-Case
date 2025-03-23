@@ -784,7 +784,6 @@ $(document).ready(function () {
                 const bgSrc = button.getAttribute('data-bg');
                 const advSrc = button.getAttribute('data-adv');
 
-                // Yeni resimleri ata
                 bgImage.src = bgSrc;
                 advImage.src = advSrc;
 
