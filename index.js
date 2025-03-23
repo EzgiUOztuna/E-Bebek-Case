@@ -773,16 +773,14 @@ $(document).ready(function () {
 
 
         //HERO BUTTONS
-        // Tüm butonları seç
         const buttons = document.querySelectorAll('.nav-button');
-        // Resim elemanlarını seç
+
         const bgImage = document.querySelector('.bg-img');
         const advImage = document.querySelector('.adv-img');
 
-        // Her butona tıklama eventi ekle
         buttons.forEach(button => {
             button.addEventListener('click', () => {
-                // Butondan veri al (background ve advertisement img)
+
                 const bgSrc = button.getAttribute('data-bg');
                 const advSrc = button.getAttribute('data-adv');
 
