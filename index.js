@@ -310,6 +310,7 @@ $(document).ready(function () {
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                overflow: hidden;
             }
 
             .adv-img{
@@ -373,7 +374,6 @@ $(document).ready(function () {
                 align-items: center;
                 justify-content: space-between;
                 gap: 2rem;
-                //margin: 0 8rem 2rem 8rem;
                 width: 80%;
                 margin: 0 auto;
             }
@@ -389,7 +389,6 @@ $(document).ready(function () {
                 background-color: #FEF6EB;
                 color: #F18E00;
                 font-size: 1.5rem;
-
             }
             
             .cards{
@@ -498,15 +497,20 @@ $(document).ready(function () {
 
             /* Telefonlar (320px - 480px) */
             @media (max-width: 480px) {
+        
                 .header-up{
-                    width:100%;
+                    max-width:320px;
                     margin: 0 1rem;
                     padding: 0;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    gap:5rem;
+                    gap:2rem;
                 }
+
+                .search-box{
+                    display: none;
+                }                
 
                 .heart-icon {
                     border: none;
@@ -535,6 +539,96 @@ $(document).ready(function () {
                 .header-down{
                     display: none;
                 }
+
+                .bg-img{
+                    width: 100%;
+                    height: 13rem;
+                }
+
+                .adv-img{
+                    width: 18rem;
+                    border-radius: 1rem;
+                    margin-bottom: .5rem;
+                    margin-top: 1rem;
+                }
+
+                .nav-hero {
+                    top: 1.5rem; 
+                    left: 50%;
+                    margin:0 auto;
+                    padding: 0;
+                }
+
+                .nav-item {
+                    margin: 0 1.5rem;
+                }
+
+                .nav-button {
+                    font-size: .5rem;
+                    border-radius: 1.5rem;
+                    padding: 0 1rem;
+                }
+
+
+                .title-primary{
+                    font-size: .8rem;
+                    padding: 1rem 2rem;
+                    margin: 1rem 0;
+                }
+
+                .carousel{
+                    gap: 1rem;
+                    width: 95%;
+                    margin: 0 auto;
+                }
+
+                .carousel-button{
+                    display: none;
+                }
+
+                .cards{
+                    gap: 1rem;
+                }
+
+                .card{
+                    min-width: 10rem; 
+                }
+
+                .favorite-button{
+                    left: 4.5rem;
+                }
+
+                .product-img{
+                    margin-bottom: .5rem;
+                    width: 10rem;
+                }
+
+                .definition{
+                    font-size: .8rem;
+                }
+
+                .price-rating {
+                    margin:0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.2rem;
+                    position: absolute;
+                    top: 20rem;
+                }
+                    
+                .rating, 
+                .final-price {
+                    font-size: .8rem;
+                }
+
+                .discount{
+                    font-size: 1rem;
+                }
+
+                .add-to-cart{
+                    font-size: .8rem;
+            }
+
             }
 
             /* Tabletler (481px - 768px) */
