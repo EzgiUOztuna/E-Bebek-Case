@@ -702,8 +702,6 @@ $(document).ready(function () {
         } catch (error) {
             console.error("Hata oluştu:", error);
         }
-
-
     };
 
 
