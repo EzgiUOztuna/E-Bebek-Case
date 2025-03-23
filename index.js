@@ -787,7 +787,6 @@ $(document).ready(function () {
                 bgImage.src = bgSrc;
                 advImage.src = advSrc;
 
-                // Tüm butonlardan 'active' sınıfını kaldır
                 buttons.forEach(btn => btn.classList.remove('active'));
 
                 // Tıklanan butona 'active' sınıfını ekle
